@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>CloudzDevOps- Home Page</title>
+<title>CloudzDevOps- Home Pagee</title>
 <link href="images/logo.png" rel="icon">
 </head>
 </head>
