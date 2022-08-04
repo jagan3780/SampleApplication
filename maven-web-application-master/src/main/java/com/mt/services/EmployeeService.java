@@ -22,7 +22,7 @@ public class EmployeeService {
 			throws JSONException {
 
 		JSONObject js = new JSONObject();
-		js.put("Name", "Jagan Technologies");
+		js.put("Name", "Cloudz DevOps");
 		js.put("Calling Name", "Jagan");
 		js.put("DOB", "08-Dec-2020");
 		js.put("Hobbies", "Reading Techical Blogs");
@@ -30,4 +30,25 @@ public class EmployeeService {
 
 		return js.toString();
 }
+	
+	@Controller
+@RequestMapping("/employee")
+public class EmployeeService {
+
+	
+	@RequestMapping(value = "/getEmployeeDetails", method = RequestMethod.GET)
+	@ResponseBody
+	public String uploadImage(HttpServletRequest request, HttpServletResponse response, HttpSession httpSession)
+			throws JSONException {
+
+		JSONObject js = new JSONObject();
+		js.put("Name", "Cloudz DevOps");
+		js.put("Calling Name", "Jagan");
+		js.put("DOB", "08-Dec-2020");
+		js.put("Hobbies", "Reading Techical Blogs");
+		js.put("Places he like", "His nativeee");
+
+		return js.toString();
+}
+	
 }
