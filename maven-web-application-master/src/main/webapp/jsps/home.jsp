@@ -41,7 +41,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>Cloudz DevOps-Consultant, Training, Development Center.</p>
+<p align=center>Cloudz DevOps-Consultantt, Training, Development Center.</p>
 <p align=center><small>Copyrights 2022 by <a href="http://cloudzdevOps.com/">Cloudz DevOps</a> </small></p>
 
 </body>
