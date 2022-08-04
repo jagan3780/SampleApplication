@@ -34,7 +34,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		Bangalore,
 		support@cloudzdevops.com
 		<br>
-		<a href="mailto:support@cloudzdevops.com">Mail to Cloudz DevOps</a>
+		<a href="mailto:support@cloudzdevops.com">E-Mail to Cloudz DevOps</a>
 	</span>
 </div>
 <hr>
