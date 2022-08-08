@@ -8,14 +8,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	
 	<name>maven-web-application</name>
-
 	<description>Maven Web Project for Java Project</description>
-
 	<organization>
 		<name>Cloudz DevOps</name>
-		<url>www.gmail.com</url>
+		<url>www.cloudzdevops.com</url>
 	</organization>
-
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<spring.version>5.1.2.RELEASE</spring.version>
@@ -26,9 +23,7 @@
 		<sonar.password>admin</sonar.password> -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 	</properties>
-
 	<dependencies>
 		
 		<dependency>
@@ -36,7 +31,6 @@
 			<artifactId>json</artifactId>
 			<version>20160212</version>
 		</dependency>
-		
 		<!-- test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -44,20 +38,19 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- compile dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -78,14 +71,15 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- provided dependencies -->
+
 	</dependencies>
-	
-	
+
+
 	<build>
 		<finalName>maven-web-application</finalName>
-		
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -96,7 +90,6 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
@@ -108,20 +101,16 @@
 					</webApp>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<wtpversion>2.0</wtpversion>
-					<wtpContextName>maven-web-application</wtpContextName>
-				</configuration>
+ 				<artifactId>maven-war-plugin</artifactId>
+ 				<version>2.6</version>
+ 				<configuration>
+ 					<failOnMissingWebXml>false</failOnMissingWebXml>
+ 				</configuration>
 			</plugin>
 			
-        </plugins>
+</plugins>
 	</build>
 	
 	
