@@ -27,7 +27,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
+		<img src="images/logo.png" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
 		Cloudz DevOps, 
