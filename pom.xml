@@ -13,7 +13,7 @@
 
 	<organization>
 		<name>Cloudz DevOps</name>
-		<url></url>
+		<url>www.gmail.com</url>
 	</organization>
 
 	<properties>
@@ -58,9 +58,6 @@
 			<version>1.9.5</version>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- compile dependencies -->
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -81,7 +78,8 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-	
+		
+		<!-- provided dependencies -->
 	</dependencies>
 	
 	
@@ -123,7 +121,7 @@
 				</configuration>
 			</plugin>
 			
-</plugins>
+        </plugins>
 	</build>
 	
 	
