@@ -36,12 +36,6 @@
 			<artifactId>json</artifactId>
 			<version>20160212</version>
 		</dependency>
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20160212</version>
-		</dependency>
-		
 		<!-- test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
