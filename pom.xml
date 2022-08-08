@@ -13,7 +13,7 @@
 
 	<organization>
 		<name>Cloudz DevOps</name>
-		<url>www.cloudzdevops.com</url>
+		<url></url>
 	</organization>
 
 	<properties>
@@ -36,6 +36,7 @@
 			<artifactId>json</artifactId>
 			<version>20160212</version>
 		</dependency>
+		
 		<!-- test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -80,7 +81,19 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
+		<!-- provided dependencies -->
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		
 	</dependencies>
+	
+	
 	<build>
 		<finalName>maven-web-application</finalName>
 		
@@ -109,11 +122,14 @@
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
- 				<artifactId>maven-war-plugin</artifactId>
- 				<version>2.6</version>
- 				<configuration>
- 					<failOnMissingWebXml>false</failOnMissingWebXml>
- 				</configuration>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<wtpContextName>maven-web-application</wtpContextName>
+				</configuration>
 			</plugin>
 			
 </plugins>
