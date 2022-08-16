@@ -23,7 +23,7 @@ public class EmployeeService {
 
 		JSONObject js = new JSONObject();
 		js.put("Name", "Cloudz DevOps");
-		js.put("Calling Name", "Jagan");
+		js.put("Calling Name", "Jaganathan");
 		js.put("DOB", "08-Dec-2020");
 		js.put("Hobbies", "Reading Techical Blogs");
 		js.put("Places he like", "His nativeee");
