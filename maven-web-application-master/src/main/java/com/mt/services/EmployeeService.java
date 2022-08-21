@@ -25,7 +25,7 @@ public class EmployeeService {
 		js.put("Name", "Cloudz DevOps");
 		js.put("Calling Name", "Jaganathann");
 		js.put("DOB", "08-Dec-2020");
-		js.put("Hobbies", "Reading Techical Blogs");
+		js.put("Hobbies", "Reading Techical Blogss");
 		js.put("Places he like", "His nativeee");
 
 		return js.toString();
