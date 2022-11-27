@@ -5,7 +5,7 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.1</version>
+	<version>1.0.1-Release</version>
 	
 	<name>maven-web-application</name>
 	<description>Maven Web Project for Java Project</description>
@@ -79,9 +79,15 @@
 	<distributionManagement>	
 	    <repository>
 	      <id>nexus3</id>
-	      <name>jaganrepository</name>
+	      <name>Jaganrepository</name>
 	      <url>http://44.192.101.29:8081/repository/Jaganrepository/</url>
-	    </repository>    
+	    </repository>  
+	    <snapshotRepository>
+	      <id>nexus3</id>
+	      <name>Jagansnaphot</name>
+	      <url>http://44.192.101.29:8081/repository/Jagansnaphot/</url>
+	    </snapshotRepository>
+	
 	</distributionManagement>
 
 	<build>
