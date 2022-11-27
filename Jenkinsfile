@@ -102,11 +102,6 @@ pipeline {
 	    }
 	 }
 	    
-        
-	    
-	    
-	   
-	    
 	    
 /*        stage('upload in S3'){
             steps{
@@ -156,7 +151,6 @@ pipeline {
                     /usr/local/bin/aws elasticbeanstalk check-dns-availability --cname-prefix my-cname
                     /usr/local/bin/aws elasticbeanstalk create-application --application-name my-sample-application --description "my sample application"
                     /usr/local/bin/aws elasticbeanstalk create-application-version --application-name my-sample-application --version-label v1234 --source-bundle S3Bucket="binaryfiles1",S3Key="maven-web-application.war" --process
-
                     /usr/local/bin/aws elasticbeanstalk create-environment --application-name my-sample-application --environment-name my-sample-env --cname-prefix my-cname --version-label v1234 --solution-stack-name "64bit Amazon Linux 2 v4.3.1 running Tomcat 8.5 Corretto 8" --option-settings Namespace="aws:autoscaling:launchconfiguration",OptionName="IamInstanceProfile",Value="aws-elasticbeanstalk-ec2-role"
                 '''
                slackSend channel: '#test', color: '#439FE0', message: 'deployed in AWS', teamDomain: 'CloudzDevops', tokenCredentialId: 'slackid'
