@@ -72,7 +72,7 @@ pipeline {
 			     ], 
 				     credentialsId: 'nexusid', 
 				     groupId: 'com.mt', 
-				     nexusUrl: '3.235.5.16:8081', 
+				     nexusUrl: '44.192.101.29:8081', 
 				     nexusVersion: 'nexus3', 
 				     protocol: 'http', 
 				     repository: 'Jaganrepository', 
