@@ -116,7 +116,8 @@ pipeline {
                                 [
 					artifactId: pom.artifactId,
                                 classifier: '',
-                                file: artifactPath,
+                              //  file: artifactPath,
+				file: pom.name,
                                 type: pom.packaging
 				]
                              /*   [
