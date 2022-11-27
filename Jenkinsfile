@@ -33,14 +33,15 @@ pipeline {
                 
             }
         }
-      stage("build & SonarQube analysis") {
+  /*    stage("build & SonarQube analysis") {
             steps {
                 sh 'mvn clean deploy'
                 slackSend channel: '#test', color: 'danger', message: 'hello'
             } 
 
-          } 
- /* stage("build & SonarQube analysis") {
+          } */
+	    
+ 	stage("build & SonarQube analysis") {
             steps {
               withSonarQubeEnv('SonarQubeServer'){
                 sh 'mvn clean sonar:sonar'
@@ -64,34 +65,7 @@ pipeline {
           }
         } 
 
-	    
-	    stage("upload in nexus") {
-		    steps {
-			    script { 
-			     nexusArtifactUploader artifacts: [
-				     [
-					     artifactId: 'maven-web-application', 
-					     classifier: '', 
-					     file: 'target/maven-web-application', 
-					     type: 'war'
-				     ]
-			     ], 
-				     credentialsId: 'nexusid', 
-				     groupId: 'com.mt', 
-				     nexusUrl: '44.192.101.29:8081', 
-				     nexusVersion: 'nexus3', 
-				     protocol: 'http', 
-				     repository: 'Jaganrepository', 
-				     version: 'com.mt'
-			    }
-		    }
-	    }  */
-	    
-	    
-	    
-	    
-	    
-	    stage("Publish to Nexus Repository Manager") {
+	stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
                     def pom = readMavenPom file: "pom.xml";
@@ -99,8 +73,7 @@ pipeline {
                     echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
                     def artifactPath = filesByGlob[0].path;
                     def artifactExists = fileExists artifactPath;
-		    
-		   def versionuploadurl = pom.version.endsWith("SNAPSHOT") ? "Jagansnaphot"  : "Jaganrepository"
+		    def versionuploadurl = pom.version.endsWith("SNAPSHOT") ? "Jagansnaphot"  : "Jaganrepository"
 			
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
@@ -115,20 +88,14 @@ pipeline {
                             artifacts: [
                                 [
 					artifactId: pom.artifactId,
-                                classifier: '',
-                              //  file: artifactPath,
-				file: artifactPath,
-                                type: pom.packaging
+                                	classifier: '',
+					file: artifactPath,
+                                	type: pom.packaging
 				]
-                             /*   [
-					artifactId: pom.artifactId,
-                                classifier: '',
-                                file: "pom.xml",
-                                type: "pom"
-				] */
                             ]
                         );
-                    } else {
+                    } 
+			else {
                         error "*** File: ${artifactPath}, could not be found";
                     }
                 }
