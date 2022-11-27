@@ -79,9 +79,11 @@
 	<distributionManagement>
 	
 	    <repository>
-	      <id>NEXUS3</id>
+	      <id>nexus3</id>
 	      <name>jaganrepository</name>
 	      <url>http://44.192.101.29:8081/repository/Jaganrepository/</url>
+		    <username>admin</username>
+		    <password>admin</password>
 	    </repository>
 	    
 	    <snapshotRepository>
