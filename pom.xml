@@ -76,6 +76,21 @@
 
 	</dependencies>
 
+	<distributionManagement>
+	
+	    <repository>
+	      <id>NEXUS3</id>
+	      <name>jaganrepository</name>
+	      <url>http://44.192.101.29:8081/repository/Jaganrepository/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>deploymentRepo</id>
+	      <name>Mithun Technologies Snapshot Nexus Repository</name>
+	      <url>http://3.145.149.71:8081/repository/MavenWebApplication/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
 
 	<build>
 		<finalName>maven-web-application</finalName>
