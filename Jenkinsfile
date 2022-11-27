@@ -29,7 +29,7 @@ pipeline {
         }
       stage("build & SonarQube analysis") {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean deploy'
                 slackSend channel: '#test', color: 'danger', message: 'hello'
             } 
 
@@ -50,7 +50,7 @@ pipeline {
                     error "Pipeline aborted due to quality gate failure: ${qg.status}"
                 }
                 else {
-                    sh 'mvn clean package'
+                    sh 'mvn clean deploy'
                     echo "sucess-jagan"
                 }
               }
