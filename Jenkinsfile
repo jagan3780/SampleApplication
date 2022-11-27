@@ -110,7 +110,7 @@ pipeline {
                             nexusUrl: NEXUS_URL,
                             groupId: pom.groupId,
                             version: pom.version,
-			    repository: ${versionuploadurl},
+			    repository: versionuploadurl,
                             credentialsId: NEXUS_CREDENTIAL_ID,
                             artifacts: [
                                 [
