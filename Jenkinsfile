@@ -58,7 +58,36 @@ pipeline {
           }
         } */
 
-        stage('upload in S3'){
+	    
+	    stage("upload in nexus") {
+		    steps {
+			    script { 
+			     nexusArtifactUploader artifacts: [
+				     [
+					     artifactId: 'maven-web-application', 
+					     classifier: '', 
+					     file: 'target/maven-web-application', 
+					     type: 'war'
+				     ]
+			     ], 
+				     credentialsId: 'nexusid', 
+				     groupId: 'com.mt', 
+				     nexusUrl: '3.235.5.16:8081', 
+				     nexusVersion: 'nexus3', 
+				     protocol: 'http', 
+				     repository: 'Jaganrepository', 
+				     version: 'com.mt'
+			    }
+		    }
+	    }
+	    
+	    
+	    
+	    
+	   
+	    
+	    
+/*        stage('upload in S3'){
             steps{
                 script {
                 //timeout(10) {
@@ -111,7 +140,8 @@ pipeline {
                 '''
                slackSend channel: '#test', color: '#439FE0', message: 'deployed in AWS', teamDomain: 'CloudzDevops', tokenCredentialId: 'slackid'
 	        }
-        }
+        } */
+	    
     } 
 }
 
