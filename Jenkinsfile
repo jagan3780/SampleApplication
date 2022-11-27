@@ -100,7 +100,7 @@ pipeline {
                     def artifactPath = filesByGlob[0].path;
                     def artifactExists = fileExists artifactPath;
 		    
-		   def versionuploadurl = pom.version.endswith("SNAPSHOT") ? "Jagansnaphot"  : "Jaganrepository"
+		   def versionuploadurl = pom.version.endsWith("SNAPSHOT") ? "Jagansnaphot"  : "Jaganrepository"
 			
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
