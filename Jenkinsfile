@@ -10,7 +10,7 @@ pipeline {
 	NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "44.192.101.29:8081"
-        NEXUS_REPOSITORY = "Jaganrepository"
+     //   NEXUS_REPOSITORY = "Jaganrepository"
         NEXUS_CREDENTIAL_ID = "nexusid"
     }
 	
@@ -99,6 +99,9 @@ pipeline {
                     echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
                     def artifactPath = filesByGlob[0].path;
                     def artifactExists = fileExists artifactPath;
+		    
+		   def versionuploadurl = pom.version.endswith("SNAPSHOT") ? "Jagansnaphot"  : "Jaganrepository"
+			
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                         nexusArtifactUploader(
@@ -107,7 +110,7 @@ pipeline {
                             nexusUrl: NEXUS_URL,
                             groupId: pom.groupId,
                             version: pom.version,
-                            repository: NEXUS_REPOSITORY,
+			    repository: ${versionuploadurl},
                             credentialsId: NEXUS_CREDENTIAL_ID,
                             artifacts: [
                                 [
