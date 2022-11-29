@@ -9,7 +9,7 @@ pipeline {
         AWS_DEFAULT_REGION = "us-east-2"
 	NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "44.203.226.30:8081"
+        NEXUS_URL = "54.163.24.72:8081"
      //   NEXUS_REPOSITORY = "Jaganrepository"
         NEXUS_CREDENTIAL_ID = "nexusid"
     }
